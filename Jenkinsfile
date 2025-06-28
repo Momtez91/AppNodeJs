@@ -31,7 +31,7 @@ pipeline {
         stage('Analyse SonarQube') {             
             steps {                 
                 script {                     
-                    def scannerHome = tool 'MySonarScanner'                     
+                    def scannerHome = tool 'mySonarScanner'                     
                     withSonarQubeEnv('Projet') {                         
                         withCredentials([string(credentialsId: 'sonarqube', variable: 'TOKEN')]) {                             
                             bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" " +                                 
